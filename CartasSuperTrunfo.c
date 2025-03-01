@@ -18,22 +18,17 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-    char estado1;
-    char codigo1[50];
-    char nome1[50];
-    int populacao1;
-    float km1;
-    float pib1;
-    int pturisticos1;
+    char estado1,estado2;
+    char codigo1,codigo2[50];
+    char nome1,nome2[50];
+    int populacao1,populacao2;
+    float km1,km2;
+    float pib1,pib2;
+    int pturisticos1,pturisticos2;
+    float denpopulacional1,denpopulacional2;
+    float rendpercapita1,rendpercapita2;
 
-    char estado2;
-    char codigo2[50];
-    char nome2[50];
-    int populacao2;
-    float km2;
-    float pib2;
-    int pturisticos2;
-
+    
         printf("Digite seu Estado: \n");
         scanf("%s", &estado1);
 
@@ -54,6 +49,13 @@ int main() {
 
         printf("Digite o numero de pontos turistico: \n");
         scanf("%d", &pturisticos1);
+        
+        denpopulacional1 = populacao1 / km1;
+        rendpercapita1 = pib1 / populacao1;
+
+        printf("Sua Densidade Populacional é de : %f \n", denpopulacional1);
+        printf("Sua Renda Per Capita é de : %f \n", rendpercapita1);
+
 
         printf("Digite seu Estado: \n");
         scanf("%s", &estado2);
@@ -75,6 +77,9 @@ int main() {
 
         printf("Digite o numero de pontos turistico: \n");
         scanf("%d", &pturisticos2);
+
+        printf("Sua Densidade Populacional é de : %f \n", denpopulacional2);
+        printf("Sua Renda Per Capita é de : %f \n", rendpercapita2);
 
 
         printf("Estado: %s \n - Codigo: %s \n - Cidade: %s \n - Populacao: %d \n - kilometragem: %f \n - Pib: %f \n - Pontos turisticos: %d \n", estado1, codigo1, nome1, populacao1, km1, pib1 , pturisticos1);
