@@ -9,12 +9,12 @@ int main() {
     // Variáveis para a primeira cidade
     char estado1[50], codigo1[50], nome1[50];
     int populacao1, pturisticos1;
-    float km1, pib1, denpopulacional1, rendpercapita1, superpoder1;
+    float km1, pib1, denpopulacional1, rendpercapita1;
 
     // Variáveis para a segunda cidade
     char estado2[50], codigo2[50], nome2[50];
     int populacao2, pturisticos2;
-    float km2, pib2, denpopulacional2, rendpercapita2, superpoder2;
+    float km2, pib2, denpopulacional2, rendpercapita2;
 
     // Cadastro da primeira cidade
     printf("Digite seu Estado: \n");
@@ -41,11 +41,9 @@ int main() {
     // Cálculos para a primeira cidade
     denpopulacional1 = populacao1 / km1;
     rendpercapita1 = pib1 / populacao1;
-    superpoder1 = populacao1 + km1 + pib1 + pturisticos1 + rendpercapita1 + (1 / denpopulacional1);
 
     printf("Sua Densidade Populacional é de: %.2f \n", denpopulacional1);
     printf("Sua Renda Per Capita é de: %.2f \n", rendpercapita1);
-    printf("Seu Super Poder é de: %.2f \n", superpoder1);
 
     // Cadastro da segunda cidade
     printf("Digite seu Estado: \n");
@@ -72,11 +70,9 @@ int main() {
     // Cálculos para a segunda cidade
     denpopulacional2 = populacao2 / km2;
     rendpercapita2 = pib2 / populacao2;
-    superpoder2 = populacao2 + km2 + pib2 + pturisticos2 + rendpercapita2 + (1 / denpopulacional2);
 
     printf("Sua Densidade Populacional é de: %.2f \n", denpopulacional2);
     printf("Sua Renda Per Capita é de: %.2f \n", rendpercapita2);
-    printf("Seu Super Poder é de: %.2f \n", superpoder2);
 
     // Exibição dos dados das cidades
     printf("\nDados da primeira cidade:\n");
@@ -89,7 +85,6 @@ int main() {
     printf("Pontos turisticos: %d\n", pturisticos1);
     printf("Densidade Populacional: %.2f\n", denpopulacional1);
     printf("Renda Per Capita: %.2f\n", rendpercapita1);
-    printf("Super Poder: %.2f\n", superpoder1);
 
     printf("\nDados da segunda cidade:\n");
     printf("Estado: %s\n", estado2);
@@ -101,31 +96,19 @@ int main() {
     printf("Pontos turisticos: %d\n", pturisticos2);
     printf("Densidade Populacional: %.2f\n", denpopulacional2);
     printf("Renda Per Capita: %.2f\n", rendpercapita2);
-    printf("Super Poder: %.2f\n", superpoder2);
 
-    // Comparação das cartas
-    printf("\nComparação de Cartas:\n");
+    // Comparação das cidades com base em um atributo (População)
+    printf("\nComparação de cidades (Atributo: População):\n");
+    printf("Cidade 1 - %s (%s): %d\n", nome1, estado1, populacao1);
+    printf("Cidade 2 - %s (%s): %d\n", nome2, estado2, populacao2);
 
-    // População
-    printf("População: Carta %d venceu (%d)\n", (populacao1 > populacao2) ? 1 : 2, (populacao1 > populacao2) ? 1 : 0);
-
-    // Área
-    printf("Área: Carta %d venceu (%d)\n", (km1 > km2) ? 1 : 2, (km1 > km2) ? 1 : 0);
-
-    // PIB
-    printf("PIB: Carta %d venceu (%d)\n", (pib1 > pib2) ? 1 : 2, (pib1 > pib2) ? 1 : 0);
-
-    // Pontos Turísticos
-    printf("Pontos Turísticos: Carta %d venceu (%d)\n", (pturisticos1 > pturisticos2) ? 1 : 2, (pturisticos1 > pturisticos2) ? 1 : 0);
-
-    // Densidade Populacional (quanto menor, melhor)
-    printf("Densidade Populacional: Carta %d venceu (%d)\n", (denpopulacional1 < denpopulacional2) ? 1 : 2, (denpopulacional1 < denpopulacional2) ? 1 : 0);
-
-    // PIB per Capita
-    printf("PIB per Capita: Carta %d venceu (%d)\n", (rendpercapita1 > rendpercapita2) ? 1 : 2, (rendpercapita1 > rendpercapita2) ? 1 : 0);
-
-    // Super Poder
-    printf("Super Poder: Carta %d venceu (%d)\n", (superpoder1 > superpoder2) ? 1 : 2, (superpoder1 > superpoder2) ? 1 : 0);
+    if (populacao1 > populacao2) {
+        printf("Resultado: Cidade 1 (%s) venceu!\n", nome1);
+    } else if (populacao1 < populacao2) {
+        printf("Resultado: Cidade 2 (%s) venceu!\n", nome2);
+    } else {
+        printf("Resultado: As cidades empataram!\n");
+    }
 
     return 0;
 }
